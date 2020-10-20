@@ -1,0 +1,30 @@
+:root {
+    --primaria: #0084CB;
+    --primaria-dark: #4F4F4F;
+    --primaria-light: #6AE5FF;
+    --segundaria: #FF9900;
+    --secundaria-dark: #C66A00;
+    --secundaria-light: #FFCA47;
+    --branco: #FFFFFF;
+    --cinza: #828282;
+    --grande: 26px;
+    --medio: 16px;
+    --pequeno: 14px;
+    font-size: 63.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100vh;
+}
+
+body {
+    background-color: white;
+}

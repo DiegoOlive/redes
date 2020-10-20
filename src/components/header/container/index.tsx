@@ -1,16 +1,15 @@
-//visualização dos componentes - cabeçalho
-
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import TopBar from '../topBar';
 
 const MainHeader = styled.header`
-    background-color: green;
+    background-color: var(--primaria);   
 `
 
 export default function Header() {
     return (
-        <MainHeader> 
-            <h1> Cabeçalho </h1>
+        <MainHeader>
+           <TopBar />
         </MainHeader>
     );
 }
