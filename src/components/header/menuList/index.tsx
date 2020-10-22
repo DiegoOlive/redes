@@ -8,7 +8,7 @@ const MenuList = styled.ul`
     li{
         color: var(--black);
         margin-bottom: 1rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;        
     }
 
     @media (min-width: 768px){
