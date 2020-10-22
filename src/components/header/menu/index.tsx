@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {CgMenu} from 'react-icons/cg';
+import {VscClose} from 'react-icons/vsc';
 import MenuIcon from '../menuIcon';
 import MenuList from '../menuList';
+
+interface MenusProps {
+    open?:boolean;    
+}
 
 const MenuContainer = styled.div`
     margin-left: 1.6rem;
@@ -12,7 +17,7 @@ const MenuContainer = styled.div`
 
     & ${MenuIcon}{
         position:fixed;
-        right:20px;
+        right:25px;
         top: 5px;
     }
 `
@@ -24,25 +29,36 @@ const MenuContainer = styled.div`
     position: fixed;
     right: 0;
     top: 0;
+    transform: ${(props: MenusProps) => props.open ? 'translateX(0)' : 'translateX(100%)'};
+    transition: transform 0.5s;
 
     @media (min-width: 768px){
+        transform: none;
         background-color: transparent;
         display: flex;
         position: static;
         height: 100%;
-        flex: 2;
+        flex: 1;
         justify-content: space-between;
     }
   `
 
 export default function Menu(){
+    const [open, setOpen] = useState(false);
     return(
         <MenuContainer>
-            <MenuIcon>
+            {!open &&
+            <MenuIcon open={open} onClick={() => setOpen(!open)}>
                <CgMenu/> 
             </MenuIcon>
-            <Menus>
-                <MenuList>
+            }
+            {open &&
+            <MenuIcon open={open} onClick={() => setOpen(!open)}>
+                <VscClose/> 
+            </MenuIcon>
+            }
+            <Menus open={open}>
+            <MenuList>
                     <li>Início</li>
                     <li>Classificação</li>
                     <li>História</li>

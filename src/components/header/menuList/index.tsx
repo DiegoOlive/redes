@@ -2,11 +2,11 @@ import styled from 'styled-components';
 //ol ordenada
 const MenuList = styled.ul`
     list-style: none;
-    margin-left: 3rem;
-    margin-top: 3rem;
-
+    margin-left: 2rem;
+    margin-top: 4rem;
+    
     li{
-        color: var(--black);
+        color: var(--preto);
         margin-bottom: 1rem;
         font-size: 1.4rem;        
     }
