@@ -2,13 +2,17 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Home from './pages/home';
+import Erro404 from './pages/erro404';
+import Classific from './pages/classific';
+
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
-        
+        <Route path="/classific" component= {Classific} />
+        <Route component= {Erro404} />
       </Switch>
     </BrowserRouter>  
   );

@@ -69,8 +69,8 @@ export default function Menu(){
                     <li>Sobre</li> 
                 </MenuList>
                 <MenuList>
+                    <li>User</li>
                     <li>Sair</li>
-                    <li>Perfil</li>
                 </MenuList>
             </Menus>
         </MenuContainer>

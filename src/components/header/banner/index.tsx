@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from '../../../assets/images/home/inicio.png';
 import BannerImg from '../bannerImg/';
 import BannerMessager, {MessageContainer} from '../bannerMessager';
 
 const BannerContainer = styled.div`
     display: flex;
-    margin: 10px;  
     flex-direction: column;
     align-items:center;
         
@@ -29,14 +27,27 @@ const BannerContainer = styled.div`
     }
   `
 
-export default function Banner(){
+  export interface BannerProps{
+    imagemSrc?: string;
+    imagemAlt?: string;
+    title: string;
+    description?: string;
+    buttonLink?: string;
+    buttonText?: string;
+}
+
+const Banner: React.FC<BannerProps> = (props) =>{
     return(
         <BannerContainer>
+            {props.imagemSrc &&
             <BannerImg
-                src={Img}
-                alt="Figura do início"
+                src={props.imagemSrc}
+                alt={props.imagemAlt}
             />
-            <BannerMessager />
+            }
+            <BannerMessager {...props} />
         </BannerContainer>
-    )    
+    );    
 }
+
+export default Banner;
