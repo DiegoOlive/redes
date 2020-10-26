@@ -5,7 +5,6 @@ import Home from './pages/home';
 import Erro404 from './pages/erro404';
 import Classific from './pages/classific';
 
-
 function App() {
   return (
     <BrowserRouter>

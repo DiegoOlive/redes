@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/header/container';
-import Footer from '../../components/footer';
+import Footer from '../../components/footer/container';
 import {BannerProps} from '../../components/header/banner';
 
 const PageTemplate: React.FC<BannerProps> = (props) =>{

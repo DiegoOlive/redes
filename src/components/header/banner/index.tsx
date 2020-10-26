@@ -7,8 +7,7 @@ const BannerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-        
-       
+               
     @media (min-width: 768px){
         display:grid;
         grid-template-columns: 3fr 2fr;
