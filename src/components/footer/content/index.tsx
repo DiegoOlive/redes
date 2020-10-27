@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FiInstagram} from 'react-icons/fi';
-import {FiFacebook, FiYoutube} from 'react-icons/fi';
+import {FiFacebook, FiYoutube, FiTwitter} from 'react-icons/fi';
 import {BsHouseDoor} from 'react-icons/bs';
 import {HiOutlineMail} from 'react-icons/hi';
 
@@ -18,12 +18,12 @@ const Content = styled.section`
     flex-direction: column;
     align-items: center;
 
+
     ${FooterData}{
         border-bottom: 1px solid var(--branco);
     }
 
-    @media (min-width: 768px){
-               
+    @media (min-width: 768px){               
         ${FooterData}{
             border: none;  
         }
@@ -45,7 +45,7 @@ const Title =styled.h1`
 const Lista = styled.ul`
     list-style: none;
     font-size: 1.5em;
-    width: 350px;
+    width: 580px;
     
     li {
         line-height: 1.5;
@@ -121,19 +121,15 @@ export default function FooterContent(){
                             </Icon>
                             <Link href="https://www.youtube.com/">network.times</Link>
                         </li>
+                        <li>
+                            <Icon>
+                                <FiTwitter/>
+                            </Icon>
+                            <Link href="https://www.twiter.com/">network.times</Link>
+                        </li>
                         </SocialNetwork>    
                     </Lista>
                 </FooterData>
-
-                <FooterData>
-                    <Title>
-                       Desenvolvedor 
-                    </Title>
-                    <Lista>
-                        <li>Diego Oliveira</li>
-                    </Lista>
-                </FooterData>
-
                 <FooterData>
                     <Title>
                         Contato
