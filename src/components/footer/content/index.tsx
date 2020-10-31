@@ -125,7 +125,7 @@ export default function FooterContent(){
                             <Icon>
                                 <FiTwitter/>
                             </Icon>
-                            <Link href="https://www.twiter.com/">network.times</Link>
+                            <Link href="https://www.twitter.com/">network.times</Link>
                         </li>
                         </SocialNetwork>    
                     </Lista>

@@ -1,15 +1,22 @@
 import React from 'react';
 import Header from '../../components/header/container';
-import Footer from '../../components/footer/container';
 import {BannerProps} from '../../components/header/banner';
+import Container from '../../components/container';
+import Footer from '../../components/footer/container';
 
-const PageTemplate: React.FC<BannerProps> = (props) =>{
-    return(
-        <div>
+//home passa para pagetemplente em forma de filho
+//pagetemplate passa a informação para container
+//container carrega a informação (respiro ao conteudo)
+
+const PageTemplate: React.FC<BannerProps> = (props) => {
+    return (
+        <>
             <Header {...props}/>
-                {props.children}
+                <Container>
+                    {props.children}
+                </Container>
             <Footer />
-        </div>
+        </>
     );
 }
 

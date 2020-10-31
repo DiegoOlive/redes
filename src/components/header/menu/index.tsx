@@ -25,7 +25,7 @@ const MenuContainer = styled.div`
     const Menus = styled.nav`
     background-color: var(--branco);
     width: 200px;
-    height: 100vh;
+    height: 60vh;
     position: fixed;
     right: 0;
     top: 0;

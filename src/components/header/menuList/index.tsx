@@ -4,7 +4,7 @@ const MenuList = styled.ul`
     list-style: none;
     margin-left: 2rem;
     margin-top: 4rem;
-    
+        
     li{
         color: var(--preto);
         margin-bottom: 1rem;
