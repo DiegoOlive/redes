@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {MATERIAL} from '../../data/matHome';
+import {MATERIAL} from '../../data/matClassif';
 import Card from '../matCard';
 
 /*
@@ -13,31 +13,24 @@ const HomeList = styled.section`
     line-height: 1.6rem;
    
     @media (min-width: 768px){
-        display: flex; 
-        justify-content: space-between;
+      
         
     }
 `
 
 const HomeName = styled.h2`
-    font-size: 1.8rem;
-    margin: 25px 0;
+    font-size: 1.6rem;
+    margin: 10px 0;
     font-weight: normal;
 `
 
 const Description = styled.p`
-    height: 450px;
-    width: 75%;
+    height: 150px;
     overflow: hidden;
-    font-size: 1.4rem;
-    font-weight: normal;
-    text-align: justify;
-    line-height:25px;
 `
 
 const Image = styled.img`
 width: 75%;
-height: 40%;
 `
 //<Image src={require(`../../assets/${material.image}`)} alt={material.name} />
 export default function MatHome() {

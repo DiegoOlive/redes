@@ -10,7 +10,7 @@ const FooterData = styled.div`
     height: 110px;
     text-align: center;
     color: var(--branco);
-    padding: 5px 0;
+    padding: 18px 0;
 `
 
 const Content = styled.section`

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const Card = styled.article`
-    height: 800px;
+    height: 600px;
     overflow: hidden;
 
     @media (min-width: 768px){
-        width: 45%;
+        width: 85%;
     }
 `
 
