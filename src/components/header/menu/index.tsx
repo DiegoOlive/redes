@@ -60,7 +60,7 @@ export default function Menu(){
             <Menus open={open}>
             <MenuList>
                     <li>Início</li>
-                    <li>Classificação</li>
+                    <li>Topologias</li>
                     <li>História</li>
                     <li>Equipamentos</li>
                     <li>Notícias</li>

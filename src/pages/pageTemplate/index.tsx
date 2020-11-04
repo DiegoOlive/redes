@@ -4,7 +4,7 @@ import {BannerProps} from '../../components/header/banner';
 import Container from '../../components/container';
 import Footer from '../../components/footer/container';
 
-//home passa para pagetemplente em forma de filho
+//pags passa para pagetemplente em forma de filho
 //pagetemplate passa a informação para container
 //container carrega a informação (respiro ao conteudo)
 

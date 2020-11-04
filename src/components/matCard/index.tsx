@@ -5,7 +5,7 @@ const Card = styled.article`
     overflow: hidden;
 
     @media (min-width: 768px){
-        width: 85%;
+        width: 95%;
     }
 `
 
