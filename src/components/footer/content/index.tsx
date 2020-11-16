@@ -46,10 +46,15 @@ const Lista = styled.ul`
     list-style: none;
     font-size: 1.5em;
     width: 580px;
+
+    li {        
+        line-height: 0.5;        
     
-    li {
+        @media (min-width: 768px){               
         line-height: 1.5;
+        }
     }
+
 `
 
 const SocialNetwork = styled.ul`
@@ -67,7 +72,7 @@ const Link = styled.a`
     margin-left: 2px;
 
     :hover{
-        color: var(--branco);
+        color: var(--branco);        
     }
 `
 
@@ -80,6 +85,7 @@ const Icon = styled.span`
 const Email=styled.a`
     color: var(--branco);
     text-decoration: none;
+    
 
     :hover{
         color: var(--branco);
@@ -89,7 +95,7 @@ const Email=styled.a`
 const Direitos = styled.p`
     color: var(--branco);
     font-size: 1.5rem;
-    padding: 8px 0;
+    padding: 10px 0;
     font-family: 'Roboto', sans-serif;
 `
 
