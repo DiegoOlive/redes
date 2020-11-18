@@ -4,7 +4,9 @@ import {MATERIAL, MATERIAL2} from '../../data/matHistoria';
 import Card from '../matCard';
 
 const HomeList = styled.section`
-
+    margin-top: 20px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     @media (min-width: 768px){
      
     }
@@ -22,12 +24,6 @@ const Description = styled.p`
     text-align: justify;
     line-height:25px;
    `
-const Descricao = styled.p`
-   font-size: 1.4rem;
-   font-weight: normal;
-   text-align: justify;
-   line-height:25px;
-  `
 
 const Image = styled.img`
     height: 35%;
@@ -49,7 +45,7 @@ export default function MatHome() {
                         <Card key={material.name}>
                             <Image src={require(`../../assets/${material.image}`)} alt={material.name} />
                             <HomeName>
-                                {material.name}
+                            {material.name}
                             </HomeName>
                             <Description>
                                 {material.description}
@@ -58,18 +54,19 @@ export default function MatHome() {
                     );
                 })                
             }
+        
             {
                MATERIAL2.filter(p => p.featured === true).map((material2) => {
                 return(
                     <Card key={material2.descricao}>
-                        <Descricao>
+                        <Description>
                                 {material2.descricao}
-                        </Descricao> 
+                        </Description> 
                     </Card>
                 );
                 }) 
             }
-                        
-        </HomeList>
+    </HomeList>                   
+        
     );
 }
