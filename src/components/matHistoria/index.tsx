@@ -4,11 +4,11 @@ import {MATERIAL, MATERIAL2} from '../../data/matHistoria';
 import Card from '../matCard';
 
 const HomeList = styled.section`
-    margin-top: 20px;
     font-size: 1.6rem;
     line-height: 1.6rem;
+    
     @media (min-width: 768px){
-     
+        height: 1500px;
     }
 `
 
@@ -18,11 +18,15 @@ const HomeName = styled.h2`
     font-weight: normal;
 `
 
-const Description = styled.p`
+const Description = styled.p`   
     font-size: 1.4rem;
     font-weight: normal;
     text-align: justify;
     line-height:25px;
+
+    @media (min-width: 768px){
+        margin: 15px 0;
+    }
    `
 
 const Image = styled.img`
@@ -30,10 +34,9 @@ const Image = styled.img`
     margin: 15px 0;
     
     @media (min-width: 768px){
-        height: 45%;
+        height: 300px;
         margin: 15px 0;
     }
-
 `
 //<Image src={require(`../../assets/${material.image}`)} alt={material.name} />
 export default function MatHome() {

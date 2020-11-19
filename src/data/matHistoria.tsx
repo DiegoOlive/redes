@@ -3,14 +3,12 @@ export const MATERIAL =
     {
         "name": "História",
         "image": "images/historia/historia3.jpg",
-        "situation": "em andamento",
         "featured": true,
         "description": "Antes do advento de computadores dotados com algum tipo de sistema de telecomunicação, a comunicação entre máquinas calculadoras e computadores antigos era realizada por usuários humanos através do carregamento de instruções entre eles. Em setembro de 1940, Petilson usou uma máquina de teletipo para enviar instruções para um conjunto de problemas a partir de seu Model K na Faculdade de Dartmouth em Nova Hampshire para a sua calculadora em Nova Iorque e recebeu os resultados de volta pelo mesmo meio. Conectar sistemas de saída como teletipos a computadores era um interesse na Advanced Research Projects Agency (ARPA) quando, em 1962, J. C. R. Licklider foi contratado e desenvolveu um grupo de trabalho o qual ele chamou de a “Rede Intergaláctica”, um precursor da ARPANET."
     },         
     {
         "name": "Processo de compartilhamento",
         "image": "images/historia/historia2.jpg",
-        "situation": "construção",
         "featured": true,
         "description": " Em 1964, pesquisadores de Dartmouth desenvolveram o Sistema de Compartilhamento de Tempo de Dartmouth para usuários distribuídos de grandes sistemas de computadores. No mesmo ano, no MIT, um grupo de pesquisa apoiado pela General Electric e Bell Labs usou um computador (DEC’s PDP-8) para rotear e gerenciar conexões telefônicas. Durante a década de 1960, Leonard Kleinrock, Paul Baran e Donald Davies, de maneira independente, conceituaram e desenvolveram sistemas de redes os quais usavam datagramas ou pacotes, que podiam ser usados em uma rede de comutação de pacotes entre sistemas de computadores. Em 1969, a Universidade da Califórnia em Los Angeles, SRI (em Stanford), a Universidade da Califórnia em Santa Bárbara e a Universidade de Utah foram conectadas com o início da rede ARPANET usando circuitos de 50 kbits/s."
     }
