@@ -10,35 +10,23 @@ import SubmitButton from '../../components/submitButton';
 
 //toda pag possui um pag template
 //pagtemplate defini cabeçalho e rodape
-const categoria = ['Discente', 'Docente']
-const funcao = ['Membro', 'Líder']
 const titulacao = ['Graduando', 'Graduado', 'Mestrado', 'Doutorado']
+const nivelr = ['Básico', 'Intermediário','Avançado']
+const motivo = ['Redes Sociais', 'Amigos', 'Buscas na Internet', 'Outros']
 
 const Form = styled.form`
-    font-family: 'Roboto', sans-serif;
     margin: 50px auto;
     width: 90%;
     
     @media (min-width: 768px){
         min-width: 768px;
-        border: 1px solid var(--bordas);
         padding: 50px;
-        border-radius: 0.8rem;
         width: 70%;
     }
 `
 
-const PublicationContainer = styled.div`
-
-`
-
 const FieldSet = styled.fieldset`
-    border: none;
-    ${PublicationContainer}+ ${PublicationContainer}{
-        border-top: 1px solid var(--bordas);
-        margin-top: 50px;
-        padding-top: 50px;
-    }
+    border: none;  
 `
 
 const Legend = styled.legend`
@@ -46,23 +34,23 @@ const Legend = styled.legend`
     color: var(--primaria);
 `
 
-const NameContainer = styled.div`
-    @media (min-width: 768px){
-        display: flex;
-    }  
-`
-
 const Photo = styled.div`
     width: 150px;
     height: 150px;
     background-color: var(--cinzaclaro);
-    border-radius: 50%;
+    border-radius: 0.9rem;
     margin-top: 20px;
 
     @media (min-width: 768px){
         flex-shrink: 0;
         margin-right: 10px;
     }
+`
+
+const NameContainer = styled.div`
+    @media (min-width: 768px){
+        display: flex;
+    }  
 `
 
 const Name = styled.div`
@@ -81,6 +69,29 @@ const Name = styled.div`
     }
 `
 
+const SenhaContainer = styled.div`
+    @media (min-width: 768px){
+        display: flex;
+    }  
+`
+
+const Senha = styled.div`
+    @media (min-width: 768px){
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        ${InputContainer}{
+            width: 100%;
+        }
+        ${InputContainer} + ${InputContainer}{
+            margin-left: 10px;
+            width: 100%;
+        }            
+    }
+`
+
+
 const Contato = styled.div`
     @media (min-width: 768px){
         display: flex;
@@ -96,8 +107,7 @@ const Contato = styled.div`
     }
 `
 
-const Property = styled.div`
-
+const ContainerSelect = styled.div`
     @media (min-width: 768px){
         display: flex;
         justify-content: space-between;  
@@ -131,11 +141,13 @@ export default function CriarConta (){
     const [name, setName] = useState('');
     const [lastname, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [confSenha, setConfSenha] = useState('');
     const [phone, setPhone] = useState('');
     const [course, setCourse] = useState('');
-    const [category, setCategory] = useState('');
-    const [occupation, setOccupation] = useState('');
     const [degree, setDegree] = useState('');
+    const [nivel, setNivel] = useState('');
+    const [motivation, setMotivation] = useState('');
     const [areas, setAreas] = useState<string[]>(['']);
   
     //mapeamento das areas atualizadas
@@ -161,10 +173,12 @@ export default function CriarConta (){
             lastname,
             email,
             phone,
+            senha,
+            confSenha,
             course,
-            category,
-            occupation,
             degree,
+            nivel,
+            motivation,
             areas,
         });
     }
@@ -174,14 +188,24 @@ export default function CriarConta (){
         const areasAtualizadas = [...areas, ''];
         setAreas(areasAtualizadas);
     }
+    /* PRECISO VERIFICAR AS SENHAS
+    function senhas (e: FormEvent){
+        e.preventDefault();
 
+        if(senha !== confSenha){
+            alert('senhas diferentes');
+            //<span>Senhas não Conferem!</span>
+        }   
+    }*/
+
+    
 
     return(
         <PageTemplate
             imagemSrc={criarContaImg}
-            imagemAlt="Imagem de Criar conta"
-            title="Criar conta"
-            description="Descrição - drdfd Criar conta"
+            imagemAlt="Imagem de CriarConta"
+            title="Crie Sua Conta Aqui"
+            description="Neste ambiente você pode criar o seu perfil, tornando-se um membro da página, desta forma, ficando por dentro das atualizações em primeira mão."
         >
 
             <Form onSubmit={handleSubmit}>
@@ -196,12 +220,12 @@ export default function CriarConta (){
                             <Input
                                 type="text"
                                 name="name"
-                                label="Nome"
+                                label="Nome:"
                                 onChange= {e => setName(e.target.value)}/>
                             <Input 
                                 type="text" 
                                 name="lastname" 
-                                label="Sobrenome"
+                                label="Sobrenome:"
                                 onChange= {e => setLastName(e.target.value)}/>
                         </Name>                        
                     </NameContainer>
@@ -209,43 +233,58 @@ export default function CriarConta (){
                             <Input 
                                 type="email"
                                 name="email"
-                                label="Email"
+                                label="Email:"
                                 placeholder="exemplo@email.com"
                                 onChange= {e => setEmail(e.target.value)}
                                 />
                             <Input 
                                 type="number"
                                 name="phone"
-                                label="Telefone"
+                                label="Telefone:"
                                 placeholder="(__)9 ____ ____"
                                 onChange= {e => setPhone(e.target.value)}
                                 />
                     </Contato>
+                    <SenhaContainer>
+                        <Senha>
+                            <Input
+                                type="password"
+                                name="senha"
+                                label="Senha:"
+                                onChange= {e => setSenha(e.target.value)}/>
+                            <Input 
+                                type="password" 
+                                name="confSenha" 
+                                label="Confirmação de Senha:"
+                                onChange= {e => setConfSenha(e.target.value)}/>                                                     
+                        </Senha>                        
+                    </SenhaContainer>
                     <Input 
                         type="text" 
                         name="course" 
-                        label="Curso"
+                        label="Curso:"
                         onChange= {e => setCourse(e.target.value)}/>
-                    <Property>
-                        <Select
-                            name="category"
-                            label="Categoria (discente,docente)"
-                            options={categoria}
-                            onChange= {e => setCategory(e.target.value)}
-                        />                   
-                        <Select
-                            name="occupation"
-                            label="Função (membro, Líder)"
-                            options={funcao}
-                            onChange= {e => setOccupation(e.target.value)}
-                        />
+                    <ContainerSelect>
                         <Select
                             name="degree"
-                            label="Titulação (graduado, mestre)"
+                            label="Titulação:"
                             options={titulacao}
                             onChange= {e => setDegree(e.target.value)}
                         />
-                    </Property>
+                        <Select
+                            name="nivel"
+                            label="Nível:"
+                            options={nivelr}
+                            onChange= {e => setNivel(e.target.value)}
+                        />                   
+                        <Select
+                            name="motivation"
+                            label="Conheceu a página por:"
+                            options={motivo}
+                            onChange= {e => setMotivation(e.target.value)}
+                        />
+                        
+                    </ContainerSelect>
                 </FieldSet>   
                 <FieldSet>
                     <TopFieldSet>

@@ -18,6 +18,6 @@ export const InputStyles = css`
     border: 1px solid var(--cinza);
     border-radius: 0.8rem;
     padding-left: 20px;
-    color: var(--cinza);
+    //color: var(--cinza);
     font-size: 1.6rem;
 `
