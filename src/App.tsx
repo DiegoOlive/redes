@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Erro404 from './pages/erro404';
 import Topologia from './pages/topologia';
 import Historia from './pages/historia';
+import CriarConta from './pages/criarConta';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/topologias" component= {Topologia} />
         <Route path="/historia" component= {Historia} />
+        <Route path="/criarconta" component= {CriarConta} />
         <Route component= {Erro404} />
       </Switch>
     </BrowserRouter>  
