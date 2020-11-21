@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {VIDEOSHIST} from '../../data/videoHistoria';
+//import {VIDEOSHIST} from '../../data/videoHistoria'; //forma estática
+import Connection from '../../services/connection';
 
 const VideoHContainer = styled.div`
 
@@ -37,10 +38,30 @@ const Info = styled.p`
         margin-left: 30%;
     }
 `
-//<iframe width="560" height="315" src="https://www.youtube.com/embed/4aTvbFbOJmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+interface VideosHist{
+    name: string,
+    video: string,
+    featured: boolean,
+}
+
+//<iframe width="560" height="315" src="https://www.youtube.com/embed/4aTvbFbOJmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 export default function VideoDestaque() {
-    var videoItem = VIDEOSHIST.filter(v => v.featured === true)[0];
+
+    const[videosHist, setVideosHist] = useState<VideosHist[]>([]);
+
+    useEffect(() => {
+        Connection.get('/videosHist')
+        .then((response) =>{
+            setVideosHist(response.data);
+        })
+        .catch((error) =>{
+           alert(error); 
+        });
+    },[]);
+
+    if(videosHist.length){
+    var videoItem = videosHist.filter(v => v.featured === true)[0];
     return (
         <VideoHContainer>
             <Video src={`https://www.youtube.com/embed/${videoItem.video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></Video>
@@ -50,6 +71,8 @@ export default function VideoDestaque() {
                     </Title>
                 </Info>
         </VideoHContainer>
-
     );
+    }else{
+        return null;
+    }
 }

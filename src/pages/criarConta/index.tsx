@@ -6,6 +6,8 @@ import Input, {InputContainer} from '../../components/input';
 import Select, {SelectContainer} from '../../components/select';
 import SubmitButton from '../../components/submitButton';
 
+import Conection from '../../services/connection';
+
 //salvar as informações como estados para serem salvas
 
 //toda pag possui um pag template
@@ -164,23 +166,32 @@ export default function CriarConta (){
             setAreas(areasAtualizadas);
     }
 
+    //const path = category === 'Discente' ? '/discentes' : /Docentes;
+
     //tudo o que a publicaçao corrente mais a propriedade, passada em value
     //e.preventDefault(); não execute comp padrão
-     function handleSubmit (e: FormEvent) {
-            e.preventDefault(); 
-            console.log({
-            name, 
-            lastname,
-            email,
-            phone,
-            senha,
-            confSenha,
-            course,
-            degree,
-            nivel,
-            motivation,
-            areas,
-        });
+    function handleSubmit (e: FormEvent) {
+            e.preventDefault();
+            const path ='/membros'; 
+            Conection.post(path, {
+                name, 
+                lastname,
+                email,
+                phone,
+                senha,
+                confSenha,
+                course,
+                degree,
+                nivel,
+                motivation,
+                areas,
+            })             
+            .then((response) => {
+                alert ("Cadastro Concluído!");
+            })
+            .catch((error) => {
+                alert(error);
+            });   
     }
 
     function addAreaInteresse(e: FormEvent){
