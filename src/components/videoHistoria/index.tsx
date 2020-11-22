@@ -14,7 +14,10 @@ const Video = styled.iframe`
 
     @media (min-width: 768px){
         margin-top: 70px;
-        margin-left: 10%;
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 75%;
         height: 500px;
         border-radius: 0.8rem;
@@ -32,10 +35,16 @@ const Info = styled.p`
     font-size: 1.6rem;
     line-height: 1.6;
     height: 50px;
-    margin-left: 15%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (min-width: 768px){
         width: 100%;
-        margin-left: 30%;
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+    align-items: center;
     }
 `
 
@@ -46,7 +55,7 @@ interface VideosHist{
 }
 
 //<iframe width="560" height="315" src="https://www.youtube.com/embed/4aTvbFbOJmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-export default function VideoDestaque() {
+export default function VideoHistoria() {
 
     const[videosHist, setVideosHist] = useState<VideosHist[]>([]);
 
