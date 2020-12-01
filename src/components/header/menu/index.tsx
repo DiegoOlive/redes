@@ -4,6 +4,7 @@ import {CgMenu} from 'react-icons/cg';
 import {VscClose} from 'react-icons/vsc';
 import MenuIcon from '../menuIcon';
 import MenuList from '../menuList';
+import { Link } from 'react-router-dom';
 
 //import Topologia from '../../../pages/topologia';
 
@@ -25,6 +26,7 @@ const MenuContainer = styled.div`
 `
 
     const Menus = styled.nav`
+    text-decoration:none; 
     background-color: var(--branco);
     width: 200px;
     height: 60vh;
@@ -45,6 +47,8 @@ const MenuContainer = styled.div`
     }
   `
 
+
+
 export default function Menu(){
     const [open, setOpen] = useState(false);
     return(
@@ -59,21 +63,21 @@ export default function Menu(){
                 <VscClose/> 
             </MenuIcon>
             }
-            <Menus open={open}>
-            <MenuList>
-                    <li>Início</li>
-                    <li>Topologias</li>
-                    <li>História</li>
+            <Menus open={open}>               
+            <MenuList>                         
+            <Link to="/" style={{ textDecoration: 'none' }}><li>Início</li></Link>
+            <Link to="/topologias" style={{ textDecoration: 'none' }}><li>Topologias</li></Link>
+            <Link to="/historia" style={{ textDecoration: 'none' }}><li>História</li></Link>
                     <li>Equipamentos</li>
                     <li>Notícias</li>
                     <li>Protocolos</li>
                     <li>Dúvidas</li>
-                    <li>Sobre</li> 
+                    <li>Sobre</li>                    
                 </MenuList>
                 <MenuList>
                     <li>User</li>
                     <li>Sair</li>
-                </MenuList>
+                </MenuList>            
             </Menus>
         </MenuContainer>
     );
