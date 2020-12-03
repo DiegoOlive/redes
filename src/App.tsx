@@ -6,15 +6,20 @@ import Erro404 from './pages/erro404';
 import Topologia from './pages/topologia';
 import Historia from './pages/historia';
 import CriarConta from './pages/criarConta';
+import EditarConta from './pages/editarConta';
+import Login from './pages/login';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} exact />
+        <Route path="/" component={Login} exact />
+        <Route path="/home" component= {Home} />
         <Route path="/topologias" component= {Topologia} />
         <Route path="/historia" component= {Historia} />
         <Route path="/criarconta" component= {CriarConta} />
+        <Route path="/editarconta" component= {EditarConta} />
+        <Route path="/login" component= {Login} />
         <Route component= {Erro404} />
       </Switch>
     </BrowserRouter>  
@@ -22,10 +27,3 @@ function App() {
 }
 
 export default App;
-
-//<div >  
-//      <h1>Hello,world</h1> 
-//      Formando campeões  
-//<Route path="/editais" component= {Editais} /> 
-//<Route component= {Erro404} />   
-//    </div>

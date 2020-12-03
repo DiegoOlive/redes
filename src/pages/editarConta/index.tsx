@@ -1,10 +1,11 @@
 import React, {FormEvent, useState} from 'react';
 import styled from 'styled-components';
 import PageTemplate from '../pageTemplate';
-import criarContaImg from '../../assets/images/criarConta/criarConta.png';
+import editarContaImg from '../../assets/images/editarConta/editarConta.png';
 import Input, {InputContainer} from '../../components/input';
 import Select, {SelectContainer} from '../../components/select';
-import SubmitButton from '../../components/Buttons/submitButton';
+import DeleteButton from '../../components/Buttons/deleteButton';
+import EditButton from '../../components/Buttons/editButton';
 
 import Conection from '../../services/connection';
 
@@ -25,6 +26,18 @@ const Form = styled.form`
         padding: 50px;
         width: 70%;
     }
+`
+
+const Form2 = styled.form`
+@media (min-width: 768px){
+    width: 70%;
+}
+`
+
+const Unir = styled.div`
+    @media (min-width: 768px){ 
+        display: flex;
+}
 `
 
 const FieldSet = styled.fieldset`
@@ -93,7 +106,6 @@ const Senha = styled.div`
     }
 `
 
-
 const Contato = styled.div`
     @media (min-width: 768px){
         display: flex;
@@ -139,7 +151,7 @@ const PlusButton = styled.button`
 `
 
 //onChance sofrer modificação -> um evento
-export default function CriarConta (){
+export default function EditarConta (){
     const [name, setName] = useState('');
     const [lastname, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -168,7 +180,7 @@ export default function CriarConta (){
 
     //tudo o que a publicaçao corrente mais a propriedade, passada em value
     //e.preventDefault(); não execute comp padrão
-    function handleSubmit (e: FormEvent) {
+    function handleAtualize (e: FormEvent) {
             e.preventDefault();
             const path ='/membros'; 
             Conection.post(path, {
@@ -185,7 +197,7 @@ export default function CriarConta (){
                 areas,
             })             
             .then((response) => {
-                alert ("Cadastro Concluído!");
+                alert ("Conta atualizada!");
             })
             .catch((error) => {
                 alert(error);
@@ -197,19 +209,43 @@ export default function CriarConta (){
         const areasAtualizadas = [...areas, ''];
         setAreas(areasAtualizadas);
     }
+
+    function handleDelete (e: FormEvent) {
+        e.preventDefault();
+        const path ='/membros'; 
+        Conection.post(path, {
+            name, 
+            lastname,
+            email,
+            phone,
+            senha,
+            confSenha,
+            course,
+            degree,
+            nivel,
+            motivation,
+            areas,
+        })             
+        .then((response) => {
+            alert ("Conta atualizada!");
+        })
+        .catch((error) => {
+            alert(error);
+        });   
+        }
        
     return(
         <PageTemplate
-            imagemSrc={criarContaImg}
-            imagemAlt="Imagem de CriarConta"
-            title="Crie Sua Conta Aqui"
-            description="Neste ambiente você pode criar o seu perfil, tornando-se um membro da página, desta forma, ficando por dentro das atualizações em primeira mão."
+            imagemSrc={editarContaImg}
+            imagemAlt="Imagem de editarConta"
+            title="Editar Conta"
+            description="Neste ambiente você pode editar o seu perfil, podendo atualizar os campos ou excluir sua conta."
         >
 
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleAtualize}>
                 <FieldSet>
                     <Legend>
-                        Seus Dados
+                        Dados Cadastrados
                     </Legend>
 
                     <NameContainer>
@@ -303,8 +339,13 @@ export default function CriarConta (){
                         })                       
                     }
                 </FieldSet>
-                <SubmitButton type="submit">Enviar</SubmitButton>        
-            </Form>
+                <Unir>
+                <EditButton type="submit">Atualizar</EditButton> 
+                    <Form2 onSubmit={handleDelete}>
+                    <DeleteButton type="submit">Excluir</DeleteButton> 
+                </Form2>
+                </Unir>
+            </Form>            
         </PageTemplate>
     );
 }

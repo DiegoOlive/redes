@@ -65,7 +65,7 @@ export default function Menu(){
             }
             <Menus open={open}>               
             <MenuList>                         
-            <Link to="/" style={{ textDecoration: 'none' }}><li>Início</li></Link>
+            <Link to="/home" style={{ textDecoration: 'none' }}><li>Início</li></Link>
             <Link to="/topologias" style={{ textDecoration: 'none' }}><li>Topologias</li></Link>
             <Link to="/historia" style={{ textDecoration: 'none' }}><li>História</li></Link>
                     <li>Equipamentos</li>
@@ -75,8 +75,8 @@ export default function Menu(){
                     <li>Sobre</li>                    
                 </MenuList>
                 <MenuList>
-                    <li>User</li>
-                    <li>Sair</li>
+                    <Link to="/editarconta" style={{ textDecoration: 'none' }}><li>User</li></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}><li>Sair</li></Link>
                 </MenuList>            
             </Menus>
         </MenuContainer>
