@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import PageTemplate from '../pageTemplate';
 import loginImg from '../../assets/images/login/login.png';
 import Input from '../../components/input';
-import SubmitButton from '../../components/Buttons/submitButton';
+import LogarButton from '../../components/Buttons/logarButton';
+import CriarContaButton from '../../components/Buttons/criarContaButton';
+
 import { Link } from 'react-router-dom';
 
 import Conection from '../../services/connection';
@@ -21,22 +23,23 @@ const Form = styled.form`
     }
 `
 
-const FieldSet = styled.fieldset`
+const FieldSet = styled.div`
     border: none;
     @media (min-width: 768px){
-    display: flex;   
+        display: flex;
+        width: 40%;   
     } 
 `
 
 const Legend = styled.legend`
-align-items: center;
+    align-items: center;
     font-size: 2.4rem;
     color: var(--primaria);
 `
 
 const Senha = styled.div`
-align-items: center;
-@media (min-width: 768px){
+    align-items: center;
+    @media (min-width: 768px){
          align-items: center;
     }
 `
@@ -50,7 +53,7 @@ const Contato = styled.div`
 const Espaco = styled.div`
     @media (min-width: 768px){
         align-items: center;
-        margin-right: 23%;
+        margin-right: 55%;
     }
 `
 
@@ -103,9 +106,9 @@ export default function LoginConta (){
                         </Senha>                        
                     <FieldSet>
                         <Espaco>
-                            <SubmitButton type="submit">Logar</SubmitButton>
+                            <LogarButton type="submit">Logar</LogarButton>
                         </Espaco>
-                        <Link to="/criarconta" style={{ textDecoration: 'none' }}><SubmitButton>Criar Conta</SubmitButton></Link>
+                        <Link to="/criarconta" style={{ textDecoration: 'none' }}><CriarContaButton>Criar Conta</CriarContaButton></Link>
                     </FieldSet> 
                 </Form>            
         </PageTemplate>
