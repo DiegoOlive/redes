@@ -4,7 +4,7 @@ import { ContainerStyles, InputStyles, LabelStyles } from '../inputStyles';
 
 //OUTRA FORMA - const SelectContainer = styled.div`
 export const SelectContainer = styled.div`
-    ${ContainerStyles}
+    ${ContainerStyles} 
 `
 
 const Label = styled.label`
