@@ -8,7 +8,7 @@ import Historia from './pages/historia';
 import CriarConta from './pages/criarConta';
 import EditarConta from './pages/editarConta';
 import Login from './pages/login';
-import IsAuthenticated from './auth';
+//import IsAuthenticated from './auth';
 
 /*const PrivateRouter ({component: Component, ...rest}) =>(
   <Route {...rest} render={props => (
