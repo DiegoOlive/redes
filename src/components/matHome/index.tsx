@@ -54,15 +54,6 @@ export default function MatHome() {
     const [mathome, setMatHome] = useState<Material[]>([]);
 
 //recebe uma função e quando ser atualizados
-    useEffect(() => {
-        Connection.get('/matHome')
-        .then((response) => {
-            setMatHome(response.data);
-        })
-        .catch((error) =>{
-            alert(error);
-        });
-    }, []);
 
     return (
         <HomeList>

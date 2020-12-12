@@ -1,14 +1,13 @@
-import React, {FormEvent, useState} from 'react';
+import React, { FormEvent, useState} from 'react';
 import styled from 'styled-components';
-import PageTemplate from '../pageTemplate';
+import { useAuth } from '../../contexts/auth';
+import PageTemplate from '../pageTemplateAuth';
 import loginImg from '../../assets/images/login/login.png';
 import Input from '../../components/input';
 import LogarButton from '../../components/Buttons/logarButton';
 import CriarContaButton from '../../components/Buttons/criarContaButton';
 
 import { Link } from 'react-router-dom';
-
-import Conection from '../../services/connection';
 
 const Form = styled.form`
     margin: 50px auto;
@@ -58,24 +57,17 @@ const Espaco = styled.div`
 `
 
 export default function LoginConta (){
+    const { signed, SignIn } = useAuth();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-  
-    function handleLogin (e: FormEvent) {
-            e.preventDefault();
-            const path ='/membros'; 
-            Conection.post(path, {
-                email,
-                senha,
-            })             
-            .then((response) => {
-                alert ("Login Realizado!");
-            })
-            .catch((error) => {
-                alert(error);
-            });   
+
+    console.log(signed);
+
+    async function handleLogin (e: FormEvent) {
+        e.preventDefault();
+       await SignIn({email, senha});
     }
-       
+
     return(
         <PageTemplate
             imagemSrc={loginImg}

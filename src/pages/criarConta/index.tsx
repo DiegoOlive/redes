@@ -1,6 +1,6 @@
 import React, {FormEvent, useState} from 'react';
 import styled from 'styled-components';
-import PageTemplate from '../pageTemplate';
+import PageTemplate from '../pageTemplateAuth';
 import criarContaImg from '../../assets/images/criarConta/criarConta.png';
 import Input, {InputContainer} from '../../components/input';
 import Select, {SelectContainer} from '../../components/select';
@@ -188,8 +188,7 @@ export default function CriarConta (){
                 alert ("Cadastro Concluído!");
             })
             .catch((error) => {
-                //alert(error);
-                alert("Senhas Diferem ou E-mail já Cadastrado");
+                alert(error);
             });   
     }
 

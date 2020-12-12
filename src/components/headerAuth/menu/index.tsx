@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { useAuth } from '../../../contexts/auth';
 import styled from 'styled-components';
 import {CgMenu} from 'react-icons/cg';
 import {VscClose} from 'react-icons/vsc';
@@ -46,27 +45,12 @@ const MenuContainer = styled.div`
         flex: 1;
         justify-content: space-between;
     }
-
-    button {
-        color: white;
-        background: none;
-        border: none;
-        margin-left: 5px;
-    }
   `
 
 
 
 export default function Menu(){
     const [open, setOpen] = useState(false);
-    const { signed, Logout } = useAuth();
-
-    console.log(signed);
-  
-    async function handleLogout() {
-      Logout();
-    }
-
     return(
         <MenuContainer>
             {!open &&
@@ -81,19 +65,8 @@ export default function Menu(){
             }
             <Menus open={open}>               
             <MenuList>                         
-            <Link to="/" style={{ textDecoration: 'none' }}><li>Início</li></Link>
-            <Link to="/topologias" style={{ textDecoration: 'none' }}><li>Topologias</li></Link>
-            <Link to="/historia" style={{ textDecoration: 'none' }}><li>História</li></Link>
-                    <li>Equipamentos</li>
-                    <li>Notícias</li>
-                    <li>Protocolos</li>
-                    <li>Dúvidas</li>
-                    <li>Sobre</li>                    
-                </MenuList>
-                <MenuList>
-                    <Link to="/editarconta" style={{ textDecoration: 'none' }}><li>Meu perfil</li></Link>
-                    <button type="button" onClick={handleLogout}>Sair</button>
-                </MenuList>            
+            <Link to="/" style={{ textDecoration: 'none' }}><li>Login</li></Link>                     
+                </MenuList>         
             </Menus>
         </MenuContainer>
     );

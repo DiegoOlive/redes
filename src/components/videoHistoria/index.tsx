@@ -58,17 +58,7 @@ interface VideosHist{
 export default function VideoHistoria() {
 
     const[videosHist, setVideosHist] = useState<VideosHist[]>([]);
-
-    useEffect(() => {
-        Connection.get('/videosHist')
-        .then((response) =>{
-            setVideosHist(response.data);
-        })
-        .catch((error) =>{
-           alert(error); 
-        });
-    },[]);
-
+    //apaguei o conection
     if(videosHist.length){
     var videoItem = videosHist.filter(v => v.featured === true)[0];
     return (

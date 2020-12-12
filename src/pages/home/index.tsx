@@ -4,6 +4,7 @@ import homeImg from '../../assets/images/home/inicio.png';
 import Material from '../../components/matHome';
 
 export default function Home() {
+
     return (
         <PageTemplate
             imagemSrc={homeImg}
