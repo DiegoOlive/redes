@@ -12,8 +12,8 @@ const OtherRoutes: React.FC = () => {
    <Switch>
      <Route path="/" component={Home} exact/>
      <Route path="/topologias" component= {Topologia}/>
-      <Route path="/historia" component= {Historia}/>
-      <Route path="/editarconta" component= {EditarConta}/>
+     <Route path="/historia" component= {Historia}/>
+     <Route path="/editarconta" component= {EditarConta}/>
   </Switch>
    </BrowserRouter>
  );

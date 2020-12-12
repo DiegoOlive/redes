@@ -38,7 +38,6 @@ const Image = styled.img`
         margin: 15px 0;
     }
 `
-//<Image src={require(`../../assets/${material.image}`)} alt={material.name} />
 export default function MatHome() {
     return (
         <HomeList>
@@ -69,7 +68,6 @@ export default function MatHome() {
                 );
                 }) 
             }
-    </HomeList>                   
-        
+    </HomeList>                 
     );
 }

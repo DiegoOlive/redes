@@ -7,8 +7,6 @@ import MenuIcon from '../menuIcon';
 import MenuList from '../menuList';
 import { Link } from 'react-router-dom';
 
-//import Topologia from '../../../pages/topologia';
-
 interface MenusProps {
     open?:boolean;    
 }
@@ -21,7 +19,7 @@ const MenuContainer = styled.div`
 
     & ${MenuIcon}{
         position:fixed;
-        right:25px;
+        right: 25px;
         top: 5px;
     }
 `
@@ -48,14 +46,16 @@ const MenuContainer = styled.div`
     }
 
     button {
-        color: white;
+        color: var(--cinza);
         background: none;
         border: none;
-        margin-left: 5px;
+        
+        @media (min-width: 768px){
+            right: 55px;
+            color: white;
+        }
     }
   `
-
-
 
 export default function Menu(){
     const [open, setOpen] = useState(false);
@@ -85,14 +85,12 @@ export default function Menu(){
             <Link to="/topologias" style={{ textDecoration: 'none' }}><li>Topologias</li></Link>
             <Link to="/historia" style={{ textDecoration: 'none' }}><li>História</li></Link>
                     <li>Equipamentos</li>
-                    <li>Notícias</li>
                     <li>Protocolos</li>
-                    <li>Dúvidas</li>
                     <li>Sobre</li>                    
                 </MenuList>
                 <MenuList>
-                    <Link to="/editarconta" style={{ textDecoration: 'none' }}><li>Meu perfil</li></Link>
-                    <button type="button" onClick={handleLogout}>Sair</button>
+                    <Link to="/editarconta" style={{ textDecoration: 'none' }}><li>User</li></Link>
+                    <button type="button" onClick={handleLogout}><Link to="" style={{ textDecoration: 'none' }}><li>Sair</li></Link></button>
                 </MenuList>            
             </Menus>
         </MenuContainer>

@@ -12,7 +12,7 @@ const BannerContainer = styled.div`
         display:grid;
         grid-template-columns: 3fr 2fr;
         grid-template-areas:
-            "message figure";
+        "message figure";
     
         & ${BannerImg}{
             grid-area: figure;

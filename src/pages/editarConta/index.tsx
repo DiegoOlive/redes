@@ -136,7 +136,7 @@ const ContainerSelect = styled.div`
         }
     }  
 `
-
+/*
 const TopFieldSet = styled.div`
     display: flex;
     justify-content: space-between;
@@ -148,7 +148,7 @@ const PlusButton = styled.button`
     color: var(--azulescuro);
     font-size: 1.6rem;
     font-weight: bold;
-`
+`*/
 
 //onChance sofrer modificação -> um evento
 export default function EditarConta (){
@@ -164,7 +164,7 @@ export default function EditarConta (){
     const [nivel, setNivel] = useState('');
     const [motivation, setMotivation] = useState('');
     //const [areas, setAreas] = useState<string[]>(['']);
-    const { signed, Logout } = useAuth();
+    const { Logout } = useAuth();
 
     var nameI = JSON.parse(JSON.stringify(sessionStorage.getItem('@App:name')));
     var lastNameI = JSON.parse(JSON.stringify(sessionStorage.getItem('@App:lastname')));

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {MATERIAL} from '../../data/matTopologia';
 import Card from '../matCard';
-
+ 
 const HomeList = styled.section`
 
     @media (min-width: 768px){
@@ -33,7 +33,6 @@ const Image = styled.img`
     }
 
 `
-//<Image src={require(`../../assets/${material.image}`)} alt={material.name} />
 export default function MatHome() {
     return (
         <HomeList>

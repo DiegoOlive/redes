@@ -21,7 +21,6 @@ const MenuList = styled.ul`
             color: var(--branco);
         }
     }
-
 `
 
 export default MenuList;

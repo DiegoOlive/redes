@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import {MATERIAL} from '../../data/matErro';
 import Card2 from '../matCard2';
 
-/*
-grid-auto-columns:
-
-*/
 const HomeList = styled.section`
     margin-top: 20px;
     font-size: 1.6rem;

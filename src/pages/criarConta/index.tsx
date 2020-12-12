@@ -188,7 +188,8 @@ export default function CriarConta (){
                 alert ("Cadastro Concluído!");
             })
             .catch((error) => {
-                alert(error);
+                //alert(error);
+                alert("As senhas Diferem ou Email já Cadastrado!");
             });   
     }
 

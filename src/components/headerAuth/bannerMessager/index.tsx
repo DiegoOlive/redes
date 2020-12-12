@@ -17,8 +17,7 @@ export const MessageContainer = styled.div`
         display: flex;
         flex-direction: column;
         text-align: start;
-        margin-left: 100px;
-        
+        margin-left: 100px;        
 `
 
 //rem valendo 10

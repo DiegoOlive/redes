@@ -18,7 +18,6 @@ const Content = styled.section`
     flex-direction: column;
     align-items: center;
 
-
     ${FooterData}{
         border-bottom: 1px solid var(--branco);
     }
@@ -54,7 +53,6 @@ const Lista = styled.ul`
         line-height: 1.5;
         }
     }
-
 `
 
 const SocialNetwork = styled.ul`
@@ -85,8 +83,7 @@ const Icon = styled.span`
 const Email=styled.a`
     color: var(--branco);
     text-decoration: none;
-    
-
+   
     :hover{
         color: var(--branco);
     }

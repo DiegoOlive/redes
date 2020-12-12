@@ -1,7 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-//import {VIDEOSHIST} from '../../data/videoHistoria'; //forma estática
-import Connection from '../../services/connection';
+import {VIDEOSHIST} from '../../data/videoHistoria'; //forma estática
+
+//import Connection from '../../services/connection';
 
 const VideoHContainer = styled.div`
 
@@ -48,19 +49,13 @@ const Info = styled.p`
     }
 `
 
-interface VideosHist{
-    name: string,
-    video: string,
-    featured: boolean,
-}
-
 //<iframe width="560" height="315" src="https://www.youtube.com/embed/4aTvbFbOJmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 export default function VideoHistoria() {
-
-    const[videosHist, setVideosHist] = useState<VideosHist[]>([]);
+    //forma dinamica
+    //const[videosHist, setVideosHist] = useState<VideosHist[]>([]);
     //apaguei o conection
-    if(videosHist.length){
-    var videoItem = videosHist.filter(v => v.featured === true)[0];
+    if(VIDEOSHIST.length){
+    var videoItem = VIDEOSHIST.filter(v => v.featured === true)[0];
     return (
         <VideoHContainer>
             <Video src={`https://www.youtube.com/embed/${videoItem.video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></Video>

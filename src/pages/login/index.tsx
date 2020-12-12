@@ -65,7 +65,8 @@ export default function LoginConta (){
 
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
-       await SignIn({email, senha});
+       await SignIn({email, senha}
+        );   
     }
 
     return(
@@ -96,7 +97,7 @@ export default function LoginConta (){
                                 label="Senha:"
                                 onChange= {e => setSenha(e.target.value)}/>
                         </Senha>                        
-                    <FieldSet>
+                    <FieldSet> 
                         <Espaco>
                             <LogarButton type="submit">Logar</LogarButton>
                         </Espaco>

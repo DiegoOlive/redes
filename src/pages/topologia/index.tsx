@@ -2,7 +2,7 @@ import React from 'react';
 import PageTemplate from '../pageTemplate';
 import topologiaImg from '../../assets/images/topologia/topologia.png';
 import Material from '../../components/matTopologia';
-
+  
 export default function topologia () {
     return (
         <PageTemplate

@@ -8,7 +8,6 @@ const BannerImg = styled.img`
         margin-right: 100px;
         width: 300px;
     }
-
 `
         
 export default BannerImg;

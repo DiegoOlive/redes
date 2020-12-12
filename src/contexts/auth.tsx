@@ -54,14 +54,12 @@ export const AuthProvider: React.FC = ({ children }) => {
     sessionStorage.setItem('@App:degree', response.data.user.degree);
     sessionStorage.setItem('@App:nivel', response.data.user.nivel);
     sessionStorage.setItem('@App:motivation', response.data.user.motivation);
-    
   }
 
   function Logout() {
     setUser(null);
     history.push("/");
     sessionStorage.clear();
-
   }
 
   return (

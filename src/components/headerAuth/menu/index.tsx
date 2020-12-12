@@ -6,8 +6,6 @@ import MenuIcon from '../menuIcon';
 import MenuList from '../menuList';
 import { Link } from 'react-router-dom';
 
-//import Topologia from '../../../pages/topologia';
-
 interface MenusProps {
     open?:boolean;    
 }
@@ -46,9 +44,6 @@ const MenuContainer = styled.div`
         justify-content: space-between;
     }
   `
-
-
-
 export default function Menu(){
     const [open, setOpen] = useState(false);
     return(

@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-//import {MATERIAL} from '../../data/matHome'; // lista estática
+import {MATERIAL} from '../../data/matHome'; // lista estática
 import Card from '../matCard';
-import Connection from '../../services/connection';
 
-/*
-grid-auto-columns:
-
-*/
 const HomeList = styled.section`
     margin-top: 20px;
     font-size: 1.6rem;
@@ -15,8 +10,7 @@ const HomeList = styled.section`
    
     @media (min-width: 768px){
         display: flex; 
-        justify-content: space-between;
-        
+        justify-content: space-between;        
     }
 `
 
@@ -40,25 +34,21 @@ const Image = styled.img`
 width: 75%;
 height: 40%;
 `
-interface Material{
+/*interface Material{
     name: string,
     image: string,
     situation: string,
     featured: boolean,
     description: string
-}
+}*/
 
 //useState (arm. estados) - salvar dados que estão no front numa função e enviar para o back
 //<Image src={require(`../../assets/${material.image}`)} alt={material.name} />
 export default function MatHome() {
-    const [mathome, setMatHome] = useState<Material[]>([]);
-
-//recebe uma função e quando ser atualizados
-
     return (
         <HomeList>
             {
-                mathome.filter(p => p.featured === true).map((material) => {
+                MATERIAL.filter(p => p.featured === true).map((material) => {
                     return(
                         <Card key={material.name}>
                             <Image src={require(`../../assets/${material.image}`)} alt={material.name} />
@@ -71,8 +61,7 @@ export default function MatHome() {
                         </Card>
                     );
                 })                
-            }
-                        
+            }                      
         </HomeList>
     );
 }
